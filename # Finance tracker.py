@@ -9,6 +9,29 @@
 # Welcome message
 print("Welcome to your finance tracker")
 
+# How much you spend a month on expenditures and the yearly amount
+print("Please input 0 or the amount you spend for each expenditure")
+
+rent_mortgage = float(input("How much do you spend each month on your rent or mortgage? £"))
+groceries = float(input("How much do you spend each month on your groceries or house supply? £"))
+transportation = float(input("How much do you spend on transportation each month? £"))
+utility = float(input("How much do you spend each on on utilities, such as gas and electricity? £"))
+entertainment = float(input("How much do you spend on entertainment or leisure each month> £"))
+clothing = float(input("How much do you spend each month clothing or personal care items? £"))
+health = float(input("How much do you spend each month on health care items? £"))
+education = float(input("How much do you spend on education or training expenses? £"))
+savings = float(input("How much do you save each month? £"))
+
+month = rent_mortgage + groceries + transportation + utility + entertainment + clothing + health + education + savings
+year = month* 12
+
+print(f"Your expenditures for each month is {month}")
+question4 = input("Would you like to know your yearly expenditures? y/n ")
+if question4 == 'y':
+    print(f"Your expenditure is {year} each year!") # Provide a breakdown of each expenditure each year
+else:
+    print("Please type y for yes or n for no")
+
 # inital question, providing the options the user can choose
 
 # Outcome - The amount the user spends either Weekly, monthly or yearly - Provide variables below - This is just test questions
