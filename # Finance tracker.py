@@ -4,7 +4,6 @@
 # Input employment salary and other income streams
 # breakdown salary and tax brackets
 # break down spending into groups
-# 
 
 # Welcome message
 print("Welcome to your finance tracker")
@@ -23,12 +22,33 @@ education = float(input("How much do you spend on education or training expenses
 savings = float(input("How much do you save each month? £"))
 
 month = rent_mortgage + groceries + transportation + utility + entertainment + clothing + health + education + savings
-year = month* 12
+year = month * 12
+
+# Each expenditure yearly
+yearly_rent = rent_mortgage * 12
+yearly_groceries = groceries * 12
+yearly_transportation = transportation * 12
+yearly_utility = utility * 12
+yearly_entertainment = entertainment * 12
+yearly_clothing = clothing * 12
+yearly_health = health * 12
+yearly_education = education * 12
+yearly_savings = savings * 12
 
 print(f"Your expenditures for each month is {month}")
 question4 = input("Would you like to know your yearly expenditures? y/n ")
 if question4 == 'y':
     print(f"Your expenditure is {year} each year!") # Provide a breakdown of each expenditure each year
+
+    # A breakdown of each expenditure multiplied by the amount of months within a year
+    question5 = input("Would you like to have a breakdown of your yearly expenditures (y/n) ")
+    if question5 == 'y':
+        print(f"""
+    Each year you spend £{yearly_rent} on rent, £{yearly_groceries} on groceries, £{yearly_transportation} on transportation, £{yearly_utility} on utilities,
+    £{yearly_entertainment} on entertainment, £{yearly_clothing} on clothing, £{yearly_health} on your health, £{yearly_education} on your education, £{yearly_savings} on your savings.
+        """)
+    elif question5 == 'n':
+        print("No works for breakdown")
 else:
     print("Please type y for yes or n for no")
 
