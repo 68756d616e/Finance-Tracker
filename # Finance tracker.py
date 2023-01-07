@@ -8,6 +8,46 @@
 # Welcome message
 print("Welcome to your finance tracker")
 
+# Tax breakdown - Include more options
+print("Welcome to your yearly tax breakdown")
+tax_question = input("""List of options you have:?
+- breakdown - breakdown
+- hiw - how it works
+- bracket = What is my tax bracket
+- type - Type of taxes
+please type here : """)
+
+if tax_question == 'breakdown':
+    user_salary = float(input("What is your yearly salary? :"))
+    tax_year = user_salary # the equation
+    print()
+elif tax_question == 'hiw':
+    how_it_works = '''Your income tax will be calculated based on the income tax band you're in. 
+The more income you earn, the higher your tax band, which means you'll pay a higher amount of income tax. 
+Income tax bands are designed to make paying tax as fair as possible to everyone, so that those who earn the most, 
+contribute more.''' # How it works
+    print(how_it_works) # Maybe remove the how it works and simple print
+elif tax_question == 'bracket':
+    user_salary2 = float(input("What is your salary? :")) # change
+    if user_salary2 <= 12500: # change
+        print(f"A salary of {user_salary2} is taxed %0") # change
+    elif user_salary2 > 12501 or user_salary2 >= 30000: # change
+        print(f"A salary of {user_salary2} is taxed %20") # change
+    elif user_salary2 >= 30001 or user_salary2 >= 45000: # change
+        print(f"A salary of {user_salary2} is taxed %30") # change
+    elif user_salary2 >= 100000: # change
+        print(f"A salary of {user_salary2} is taxed %40") # change
+elif tax_question == 'type':
+    print("You have two types of tax, Income tax and personal tax")
+    print("Income tax: Income Tax is a tax you pay on your income. You do not have to pay tax on all types of income.")
+    print("""Personal tax: The individual income tax (or personal income tax) is a tax levied on the wages, 
+salaries, dividends, interest, and other income a person earns throughout the year. 
+The tax is generally imposed by the state in which the income is earned.
+""")
+else:
+    print("Please type breakdown for a yearly breakdown or hiw for how it works (lowercase)")
+
+print() # empty space
 # How much you spend a month on expenditures and the yearly amount
 print("Please input 0 or the amount you spend for each expenditure")
 
