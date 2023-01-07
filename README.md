@@ -17,3 +17,8 @@ List of questions
 - Gifts and charitable donations 
 - Savings and investments 
  
+Addtional questions answered
+- A breakdown of the users tax
+- How tax works
+- The users the tax bracket
+- Types of tax
