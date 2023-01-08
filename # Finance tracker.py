@@ -35,7 +35,7 @@ elif tax_question == 'bracket':
         print(f"A salary of {user_salary2} is taxed %20") # change
     elif user_salary2 >= 30001 or user_salary2 >= 45000: # change
         print(f"A salary of {user_salary2} is taxed %30") # change
-    elif user_salary2 >= 100000: # change
+    elif user_salary2 >40001 or user_salary2 >= 100000: # change
         print(f"A salary of {user_salary2} is taxed %40") # change
 elif tax_question == 'type':
     print("You have two types of tax, Income tax and personal tax")
