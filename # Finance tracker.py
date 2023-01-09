@@ -11,16 +11,33 @@ print("Welcome to your finance tracker")
 # Tax breakdown - Include more options
 print("Welcome to your yearly tax breakdown")
 tax_question = input("""List of options you have:?
-- breakdown - breakdown
+- breakdown - Tax breakdown
 - hiw - how it works
 - bracket = What is my tax bracket
 - type - Type of taxes
 please type here : """)
 
 if tax_question == 'breakdown':
-    user_salary = float(input("What is your yearly salary? :"))
-    tax_year = user_salary # the equation
-    print()
+    tax_choice = input("Would you like an example or to calculate your own tax? type example or own")
+    if tax_choice == 'example':
+        name = input("What is your name? :")
+        print(f"""If {name} earns £20,000 per year, paid monthly (so £1,667 per month).
+Salary £20,000 - Yearly Income
+Personal Allowance (£12,570) - This will not be taxed
+Total £7,430 - Remaining when you subtract personal allowance from yearly salary
+@20% £1,486 - The yearly amount taxed from the total remaining (£7430)
+monthly tax - @20 yearly / 12 months = 123.83
+PAYE deducted £1,485.60""")
+        print() # Blank space
+    elif tax_choice == 'own':
+        user_salary = float(input("What is your yearly salary? :"))
+        tax_year = user_salary # the equation
+        salary_remaining = user_salary - 12570 # We subtract the personal income which will not be taxed
+        to_tax = salary_remaining / 12 # We divide it by the amount of months
+        month_tax =  0.2 * to_tax # We calculate the tax percentage - In this example it is %20 - change to fit whatever tax bracket the user is within
+        year_tax = month_tax * 12
+        print(f"""With a salary of {user_salary}, 12570 will be tax free, the remaining {salary_remaining} will be taxed. Your PAYE will be 20% of {salary_remaining}, which is {month_tax}
+Each year you will pay {year_tax} tax""")
 elif tax_question == 'hiw':
     how_it_works = '''Your income tax will be calculated based on the income tax band you're in. 
 The more income you earn, the higher your tax band, which means you'll pay a higher amount of income tax. 
@@ -30,13 +47,13 @@ contribute more.''' # How it works
 elif tax_question == 'bracket':
     user_salary2 = float(input("What is your salary? :")) # change
     if user_salary2 <= 12500: # change
-        print(f"A salary of {user_salary2} is taxed %0") # change
-    elif user_salary2 > 12501 or user_salary2 >= 30000: # change
-        print(f"A salary of {user_salary2} is taxed %20") # change
-    elif user_salary2 >= 30001 or user_salary2 >= 45000: # change
-        print(f"A salary of {user_salary2} is taxed %30") # change
-    elif user_salary2 > 45001 or user_salary2 >= 100000: # change
-        print(f"A salary of {user_salary2} is taxed %40") # change
+        print(f"A salary of {user_salary2} is taxed %0") # change to correct rate
+    elif user_salary2 > 12501 or user_salary2 >= 30000: # change to correct rate
+        print(f"A salary of {user_salary2} is taxed %20") # change to correct rate
+    elif user_salary2 >= 30001 or user_salary2 >= 45000: # change to correct rate
+        print(f"A salary of {user_salary2} is taxed %30") # change to correct rate
+    elif user_salary2 >40001 or user_salary2 >= 100000: # change to correct rate
+        print(f"A salary of {user_salary2} is taxed %40") # change to correct rate
 elif tax_question == 'type':
     print("You have two types of tax, Income tax and personal tax")
     print("Income tax: Income Tax is a tax you pay on your income. You do not have to pay tax on all types of income.")
