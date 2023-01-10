@@ -11,10 +11,10 @@ print("Welcome to your finance tracker")
 # Tax breakdown - Include more options
 print("Welcome to your yearly tax breakdown")
 tax_question = input("""List of options you have:?
-- breakdown - Tax breakdown
-- hiw - how it works
-- bracket = What is my tax bracket
-- type - Type of taxes
+- Type breakdown for Tax breakdown
+- Type hiw for how it works
+- Type bracket for What is my tax bracket
+- Type for Type of taxes
 please type here : """)
 
 if tax_question == 'breakdown':
